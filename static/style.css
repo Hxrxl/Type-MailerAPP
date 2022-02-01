@@ -63,8 +63,7 @@ ul {
 .mail:hover {
     background-color: rgba(65, 65, 65, 0.534);
     box-shadow: 10px 0px 15px rgba(20, 16, 26, 0.493);
-    transform: scale(1.1);
-    position: relative;
+
 }
 
 .mail {
