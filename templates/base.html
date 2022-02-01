@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>{% block title %}{% endblock %}-El Buzon de Correo.</title>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Oswald&family=Pacifico&display=swap" rel="stylesheet">
+<nav>
+    <b><span>COR</span>REOS</b>
+</nav>
+<section>
+    <div class='top-bar'>
+        <form class='content' method='get'>
+            <input name='search' type='text' placeholder="Iniciar busqueda.. :)" />
+            <div id="contenedor">
+                <div class="loader" id="loader"></div>
+            </div>
+        </form>
+        {% block action %}{% endblock %}
+    </div>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for mesage in get_flashed_messages() %}
+    <div class="flash">{{message}}</div>
+    {% endfor %} {% block content %}{% endblock %}
+</section>
